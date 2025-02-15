@@ -2,14 +2,20 @@ import { Link, Route, Routes, Navigate } from 'react-router-dom';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+
 import './App.css'
+import Login from './components/authentication/Login';
+import ProtectedRoute from './components/routes/ProtectedRoute';
+import PaseLista from './routes/PaseLista';
+
 
 function App() {
   const [count, setCount] = useState(0);
-  const [where, setWhere] = useState("");
+  const [where, setWhere] = useState("/home");
 
   return (
     <>
+    {console.log('this is a test')}
       <Routes>
 
         <Route path="*" element={
@@ -17,7 +23,8 @@ function App() {
             {/* TOPNAV */}
             <div className='topnav'>
               <div className='header'>
-                <img src='./visilogo.svg' />
+                <img src='./visilogo2.svg' />
+                <h2>Pase Lista App</h2>
               </div>
               <div className='links'>
                 <Link to="/home">Home</Link>
@@ -30,10 +37,11 @@ function App() {
 
             {/* APP */}
             <div className="App">
+              eeeeeeeeeeeeeeeee
               <Routes>
                 <Route path="/" element={where} />
                 <Route path="home" element={"placeholder"} />
-                <Route path="/paselista" element={"placeholder"} />
+                <Route path="/paselista" element={<ProtectedRoute><PaseLista /></ProtectedRoute>} />
                 <Route path='/login' element={<Login />} />
               </Routes>
             </div>

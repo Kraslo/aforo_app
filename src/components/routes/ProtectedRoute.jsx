@@ -13,4 +13,4 @@ const ProtectedRoute = ({children}) => {
 };
 
 
-export default ProtectedComponent;
+export default ProtectedRoute;

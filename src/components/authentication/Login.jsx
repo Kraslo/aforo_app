@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { login } from "../../api/login";
 import { useAuth } from "../auth/UseAuth";
+import ProtectedComponent from "../routes/ProtectedRoute";
 
 
 const Login = () => {
