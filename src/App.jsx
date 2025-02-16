@@ -24,14 +24,14 @@ function App() {
             <div className='topnav'>
               <div className='header'>
                 <img src='./visilogo2.svg' />
-                <h2>Pase Lista App</h2>
+                <h2>Visi Lista</h2>
               </div>
               <div className='links'>
-                <Link to="/home">Home</Link>
+                <Link to="/calendar">Calendario</Link>
                 <Link to="/paselista">Pase de lista</Link>
+                <Link to="/catecumenos">Catecúmenos</Link>
                 <Link to="/login">Logout</Link>
               </div>
-              
             </div>
 
 
@@ -40,8 +40,10 @@ function App() {
               eeeeeeeeeeeeeeeee
               <Routes>
                 <Route path="/" element={where} />
-                <Route path="home" element={"placeholder"} />
+                <Route path="/home" element={"placeholder"} /> 
+                <Route path="/calendar" element={"placeholder"} />
                 <Route path="/paselista" element={<ProtectedRoute><PaseLista /></ProtectedRoute>} />
+                {/* <Route path="/paselista" element={<PaseLista />} /> */}
                 <Route path='/login' element={<Login />} />
               </Routes>
             </div>
